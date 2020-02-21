@@ -8,7 +8,6 @@ const TeamForm = props => {
             name: "",
             email: "",
             class: "",
-            level: ""
           }
     ]);
 
@@ -24,7 +23,6 @@ const TeamForm = props => {
             name: "",
             email: "",
             class: "",
-            level: ""
         })
     }
 
