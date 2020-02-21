@@ -7,50 +7,58 @@ const TeamForm = props => {
             id: "",
             name: "",
             email: "",
-            role: ""
+            class: "",
+            level: ""
           }
     ]);
 
-    const handleChanges = event =>{
-        setMember({...member, [event.target.name]: event.target.value })
+    const handleChanges = event => {
+        setMember({ ...member, [event.target.name]: event.target.value })
     }
 
     const submitForm = event => {
-        console.log("Yeah Submit!");
+        console.log("YEAH! IT SUBMITS!");
         event.preventDefault();
         props.addNewMember(member);
         setMember({
             name: "",
             email: "",
-            role: ""
+            class: "",
+            level: ""
         })
     }
 
     return (
         <form onSubmit={submitForm}>
-            <label htmlFor='name'>Name:</label>
+            <label htmlFor='name'>Name: </label>
             <input 
             type="text"
-            placeholder="Name"
+            placeholder="Enter Name"
             id="name"
-            onChange={handleChanges}/>
-
-            <label htmlFor='email'>Email:</label>
+            name="name"
+            onChange={handleChanges}
+             />
+             <label htmlFor='email'>Email: </label>
             <input 
-            type="text"
-            placeholder="Email"
+            type="email"
+            placeholder="Enter Email"
             id="email"
-            onChange={handleChanges}/>
-
-            <label htmlFor='name'>Role:</label>
+            name="email"
+            onChange={handleChanges}
+             />
+             <label htmlFor='role'>Role: </label>
             <input 
             type="text"
-            placeholder="Role"
+            placeholder="Enter Role"
             id="role"
-            onChange={handleChanges}/>
+            name="role"
+            onChange={handleChanges}
+             />
 
-            <button type="submit">Submit</button>
+            <button className="btn btn-primary btn-sm text-white" type='submit'>Add Member</button>
         </form>
     )
 }
+
+
 export default TeamForm

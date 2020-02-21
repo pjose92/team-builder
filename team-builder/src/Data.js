@@ -8,7 +8,8 @@ export default [
     {
         id: 2,
         name: 'Sam Winchester',
-        email: 'SamWinsn@gmail.com',
-        Role: 'Software Engineer'
+        email: 'SamWinc@yahoo.com',
+        role: 'Software Engineer'
     }
+    
 ]

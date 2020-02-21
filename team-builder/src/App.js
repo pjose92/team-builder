@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import data from './Data';
-import './App.css';
-import Members from "./component/Members"
-import Form from "./component/Form"
+import React, { useState } from "react";
+import "./App.css";
+import data from "./Data";
+import Members from "./component/Members";
+import Header from "./component/Header"
+import Form from "./component/Form";
+import { Container, Card, Col } from "reactstrap";
 
 function App(props) {
-  const [teamHere, setTeamHere] = useState([
-    ...data 
+  const [team, setTeam] = useState([
+    ...data
   ]);
   console.log(data);
 
@@ -15,19 +17,23 @@ function App(props) {
       id: Date.now(),
       name: member.name,
       email: member.email,
-      role: member.role
+      role: member.role,
     };
-    setTeamHere([...teamHere, newMember])
+    setTeam([...team, newMember])
   }
-
   return (
-    <div>
-      <h1>The Team</h1>
+    <Container>
+      <Header />
       <div>
         <Form addNewMember={addNewMember} />
-        <Members members={teamHere} />
+        <Col xs="12">
+          <h1>Members List</h1>
+        </Col>
+        <Card>
+        <Members members={team} />
+        </Card>
       </div>
-    </div>
+    </Container>
   );
 }
 
