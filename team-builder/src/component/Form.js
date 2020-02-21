@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const TeamForm = props => {
 
@@ -7,7 +7,7 @@ const TeamForm = props => {
             id: "",
             name: "",
             email: "",
-            class: "",
+            role: "",
           }
     ]);
 
@@ -20,9 +20,10 @@ const TeamForm = props => {
         event.preventDefault();
         props.addNewMember(member);
         setMember({
+            id: "",
             name: "",
             email: "",
-            class: "",
+            role: "",
         })
     }
 

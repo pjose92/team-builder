@@ -6,7 +6,7 @@ const Header = props => {
   return (
     <Row className="mb-5">
       <Col xs="12">
-        <Navbar color="light" light expand="md">
+        <Navbar color="primary" light expand="md">
           <NavLink
             to="/"
             className="navbar-brand"
